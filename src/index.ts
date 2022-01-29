@@ -1,9 +1,11 @@
-import { URLController } from './controller/URLController';
 import express from 'express';
+import cors from 'cors';
 import { MongoConnection } from './database/MongoConnection';
+import { URLController } from './controller/URLController';
 const port = 5000;
 
 const api = express();
+api.use(cors());
 api.use(express.json());
 
 const database = new MongoConnection();
