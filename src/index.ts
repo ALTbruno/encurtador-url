@@ -15,6 +15,7 @@ const urlController = new URLController();
 
 api.post('/shorten', urlController.shorten);
 api.get('/:hash', urlController.redirect);
+api.get('/id/:_id', urlController.findById);
 
 api.listen(port, () => console.log(`SERVIDOR EXPRESS EXECUTANDO NA PORTA ${port}...`));
 

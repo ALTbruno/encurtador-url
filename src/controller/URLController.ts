@@ -5,6 +5,7 @@ import { URLModel } from '../database/model/URL';
 
 
 export class URLController {
+
 	public async shorten(req: Request, res: Response): Promise<void> {
 
 		// Verificar se a URL já existe
@@ -41,5 +42,12 @@ export class URLController {
 		}
 
 		res.status(400).json({ error: "URL not found"});
+	}
+
+	public async findById(req: Request, res: Response): Promise<void> {
+		const { _id } = req.params;
+		const url = await URLModel.findById({ _id });
+		res.json(url);
+
 	}
 }

@@ -2,6 +2,9 @@ import {prop, getModelForClass} from '@typegoose/typegoose';
 
 export class URL{
 
+	@prop({})
+	_id: string
+
 	@prop({ required: true })
 	hash: string
 
